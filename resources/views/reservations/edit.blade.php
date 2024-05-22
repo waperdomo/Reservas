@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Edit Reservation</h1>
+    {{-- Si hay un error, muestra el mensaje de error --}}
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
