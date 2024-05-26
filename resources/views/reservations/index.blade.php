@@ -3,6 +3,12 @@
 @section('content')
 <div class="container">
     <h1>Reservations</h1>
+    <!-- Mostrar mensaje de éxito -->
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <a href="{{ route('reservations.create') }}" class="btn btn-primary">Create Reservation</a>
     <table class="table">
         <thead>
