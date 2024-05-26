@@ -19,10 +19,10 @@
             <p class="card-text"><strong>Observations:</strong> {{ $reservation->observations }}</p>
             <a href="{{ route('reservations.index') }}" class="btn btn-primary">Back to Reservations</a>
             <a href="{{ route('reservations.edit', $reservation) }}" class="btn btn-warning">Edit</a>
-            <form action="{{ route('reservations.destroy', $reservation) }}" method="POST" style="display:inline;">
+            <form method="POST" action="{{ route('reservations.destroy', $reservation->id) }}">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger">Delete</button>
+                <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar esta reserva?')">Eliminar reserva</button>
             </form>
         </div>
     </div>

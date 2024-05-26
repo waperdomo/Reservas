@@ -12,8 +12,13 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('reservations.index')" :active="request()->routeIs('eservations.index')">
+                    <x-nav-link :href="route('reservations.index')" :active="request()->routeIs('reservations.index')">
                         {{ __('Home') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('laboratories.index')" :active="request()->routeIs('laboratories.index')">
+                        {{ __('Laboratorios') }}
                     </x-nav-link>
                 </div>
             </div>
