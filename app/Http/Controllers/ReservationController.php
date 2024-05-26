@@ -116,4 +116,15 @@ class ReservationController extends Controller
     {
         return view('reservations.show', compact('reservation'));
     }
+
+    public function active()
+    {
+        // Obtener las reservas activas del usuario actual
+        $currentDateTime = now();
+        $reservations = Reservation::where('user_id', auth()->id())
+                                ->where('end_time', '>', $currentDateTime)
+                                ->get();
+
+        return view('reservations.active', compact('reservations'));
+    }
 }
