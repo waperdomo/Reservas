@@ -2,8 +2,14 @@
 
 @section('content')
     <div class="container">
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
         <div class="row justify-content-center">
             <div class="col-md-8">
+
                 <div class="card">
                     <div class="card-header">Available Laboratories</div>
 
@@ -16,8 +22,13 @@
                             @endforelse
                         </ul>
                     </div>
+                    <div class="card-footer">
+                        <a href="{{ route('laboratories.create') }}" class="btn btn-primary justify-content-center">Create Reservation</a>
+                    </div>
                 </div>
             </div>
         </div>
+        <br>
+
     </div>
 @endsection

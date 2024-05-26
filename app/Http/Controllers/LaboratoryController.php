@@ -22,7 +22,7 @@ class LaboratoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('laboratories.create');
     }
 
     /**
@@ -30,7 +30,17 @@ class LaboratoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'type' => 'required|string|max:55',
+            'capacity' => 'required|integer|min:1',
+        ]);
+        Laboratory::create([
+            'type' => $request->type,
+            'capacity' => $request->capacity,
+        ]);
+
+        return redirect()->route('laboratories.create')->with('success', 'Laboratorio creado correctamente.');
+    
     }
 
     /**

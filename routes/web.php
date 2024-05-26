@@ -25,12 +25,4 @@ Route::middleware('auth')->group(function () {
     Route::get('active', [ReservationController::class, 'active'])->name('reservations.active');
 
 });
-/* Route::get('reservations/active', function () {
-    $currentDateTime = now();
-    $reservations = Reservation::where('user_id', auth()->id())
-                    ->where('end_time', '>', $currentDateTime)
-                    ->get();
-    return $reservations;
-
-})->name('reservations.active'); */
 require __DIR__.'/auth.php';
